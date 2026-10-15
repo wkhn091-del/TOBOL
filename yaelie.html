@@ -1,0 +1,3571 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAELIE NAILS — Luxury Nail Atelier</title>
+  <meta name="description" content="YAELIE NAILS — אטלייה ללק ג'ל יוקרתי: שפיץ, מרובע, עיצוב ובנייה. ורוד בייבי, שחור וזהב־ורוד." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #E1D8C7;
+      --paper-deep: #D6CBB8;
+      --bg: #F3E6E9;
+      --bg-soft: #FADADD;
+      --pink: #FADADD;
+      --pink-soft: #F7E4E8;
+      --pink-deep: #E8B4BC;
+      --pink-mist: #FFF0F3;
+      --black: #0D0D0D;
+      --black-soft: #1A1A1A;
+      --gold: #C9A27A;
+      --gold-soft: #E2C4A0;
+      --gold-dim: rgba(201, 162, 122, 0.35);
+      --cream: #FFF8F9;
+      --muted: #6B6163;
+      --line: rgba(13, 13, 13, 0.08);
+      --shadow: 0 16px 40px rgba(13, 13, 13, 0.08);
+      --shadow-sm: 0 4px 14px rgba(13, 13, 13, 0.06);
+      --radius: 1.25rem;
+      --radius-md: 0.875rem;
+      --radius-sm: 0.5rem;
+      --font-display: "Noto Serif Hebrew", "Frank Ruhl Libre", Georgia, serif;
+      --font-body: "Rubik", system-ui, sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+      --motion-instant: 100ms;
+      --motion-fast: 180ms;
+      --motion-base: 280ms;
+      --motion-slow: 480ms;
+      --header-h: 4.75rem;
+      --whatsapp: #25D366;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 1rem);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: var(--font-body);
+      background:
+        radial-gradient(900px 480px at 85% 0%, rgba(201, 162, 122, 0.14), transparent 55%),
+        radial-gradient(780px 420px at 8% 18%, rgba(250, 218, 221, 0.9), transparent 52%),
+        linear-gradient(180deg, #FADADD 0%, var(--bg) 28%, var(--cream) 55%, #F8D5DC 100%);
+      color: var(--black);
+      line-height: 1.65;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+    bdi { unicode-bidi: isolate; }
+
+    .container {
+      width: min(1280px, calc(100% - 1.75rem));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      inset-inline-start: 1rem;
+      top: -100px;
+      z-index: 200;
+      padding: 0.65rem 1rem;
+      background: var(--black);
+      color: var(--cream);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-block: 0 2rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--cream);
+    }
+
+    .trust-bar p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .trust-bar strong {
+      display: block;
+      color: var(--black);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .resume-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(250, 218, 221, 0.45);
+      border: 1px solid rgba(201, 162, 122, 0.35);
+      font-size: 0.9rem;
+    }
+
+    .resume-banner.is-on { display: flex; }
+
+    .faq {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    .faq details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--cream);
+      padding: 0.95rem 1.1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq p {
+      margin-top: 0.65rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .toast {
+      position: fixed;
+      inset-inline-start: 50%;
+      bottom: 5.5rem;
+      transform: translateX(-50%) translateY(20px);
+      z-index: 120;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--cream);
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--motion-fast) var(--ease), transform var(--motion-fast) var(--ease);
+      box-shadow: var(--shadow);
+    }
+
+    .toast.is-on {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .vat-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .trust-bar { grid-template-columns: 1fr; }
+    }
+
+    /* —— Header (glass over hero — one first-viewport composition) —— */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      background: rgba(255, 248, 249, 0.55);
+      backdrop-filter: blur(18px) saturate(1.15);
+      -webkit-backdrop-filter: blur(18px) saturate(1.15);
+      border-bottom: 1px solid rgba(201, 162, 122, 0.28);
+      transition:
+        background var(--motion-base) var(--ease),
+        box-shadow var(--motion-base) var(--ease),
+        border-color var(--motion-base) var(--ease);
+    }
+
+    .site-header.is-solid {
+      background: rgba(255, 240, 243, 0.92);
+      box-shadow: 0 10px 36px rgba(13, 13, 13, 0.06);
+      border-bottom-color: rgba(201, 162, 122, 0.4);
+    }
+
+    .site-header .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: 3.25rem;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      line-height: 1;
+      min-width: 0;
+      justify-self: start;
+      z-index: 2;
+    }
+
+    .brand-logo {
+      display: none !important;
+    }
+
+    .brand-mark {
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background:
+        radial-gradient(circle at 30% 28%, var(--gold-soft), var(--gold) 55%, #9a7350 100%);
+      box-shadow:
+        0 0 0 1px rgba(201, 162, 122, 0.45),
+        0 6px 16px rgba(201, 162, 122, 0.28);
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "Y";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--black);
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav {
+      /* True center of the full header bar (not the inner container) */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      z-index: 3;
+      pointer-events: none;
+      width: max-content;
+      max-width: min(52vw, 36rem);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.85rem;
+      pointer-events: auto;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      position: relative;
+      font-size: 0.84rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(13, 13, 13, 0.62);
+      padding: 0.35rem 0;
+      transition: color var(--motion-fast) var(--ease);
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--motion-base) var(--ease);
+    }
+
+    .nav-links a:not(.nav-cta):hover {
+      color: var(--black);
+    }
+
+    .nav-links a:not(.nav-cta):hover::after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    .header-cta {
+      justify-self: end;
+      grid-column: 2;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .nav-cta,
+    .header-cta .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-inline-start: 0;
+      padding: 0.62rem 1.2rem;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--cream) !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      border: 1px solid rgba(201, 162, 122, 0.55);
+      box-shadow: 0 8px 22px rgba(13, 13, 13, 0.14);
+      transition:
+        transform var(--motion-fast) var(--ease),
+        background var(--motion-fast) var(--ease),
+        box-shadow var(--motion-fast) var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--black-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(13, 13, 13, 0.18);
+    }
+
+    .nav-toggle {
+      display: none;
+      pointer-events: auto;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 162, 122, 0.4);
+      background: rgba(255, 248, 249, 0.65);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 1rem;
+      height: 1.5px;
+      background: var(--black);
+    }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: min(100svh, 940px);
+      display: flex;
+      align-items: center;
+      padding-block: calc(var(--header-h) + 1.5rem) 4.75rem;
+      margin-top: calc(var(--header-h) * -1);
+      overflow: hidden;
+      background: #FADADD;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 32% 42%;
+      display: block;
+      transform: scale(1.04);
+      animation: heroKen 24s var(--ease) infinite alternate;
+      filter: saturate(1.03) contrast(1.02);
+    }
+
+    @keyframes heroKen {
+      from { transform: scale(1.04) translate3d(0, 0, 0); }
+      to { transform: scale(1.1) translate3d(-1.5%, 1%, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg img { animation: none; transform: scale(1.03); }
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          255deg,
+          rgba(255, 240, 243, 0.97) 0%,
+          rgba(250, 218, 221, 0.9) 22%,
+          rgba(250, 218, 221, 0.48) 44%,
+          rgba(250, 218, 221, 0.1) 66%,
+          transparent 80%
+        ),
+        radial-gradient(680px 420px at 82% 68%, rgba(201, 162, 122, 0.18), transparent 70%);
+    }
+
+    .hero-ghost {
+      position: absolute;
+      z-index: 1;
+      inset-inline-end: 3%;
+      top: 16%;
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 14vw, 11rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 0.85;
+      color: rgba(13, 13, 13, 0.045);
+      pointer-events: none;
+      user-select: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: min(1160px, calc(100% - 2.5rem));
+    }
+
+    .hero-copy {
+      max-width: 34rem;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      animation: heroCopyIn 0.9s var(--ease) both;
+    }
+
+    @keyframes heroCopyIn {
+      from { opacity: 0; transform: translate3d(-18px, 14px, 0); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .hero-copy > * {
+      animation: heroLineIn 0.7s var(--ease) both;
+    }
+
+    .hero-copy > *:nth-child(1) { animation-delay: 80ms; }
+    .hero-copy > *:nth-child(2) { animation-delay: 160ms; }
+    .hero-copy > *:nth-child(3) { animation-delay: 240ms; }
+    .hero-copy > *:nth-child(4) { animation-delay: 320ms; }
+    .hero-copy > *:nth-child(5) { animation-delay: 400ms; }
+    .hero-copy > *:nth-child(6) { animation-delay: 480ms; }
+    .hero-copy > *:nth-child(7) { animation-delay: 560ms; }
+
+    @keyframes heroLineIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-copy,
+      .hero-copy > * { animation: none; }
+    }
+
+    .hero-logo {
+      display: none;
+    }
+
+    .hero-brand-mark {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 0.55rem;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 1.75rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.95rem, 4.4vw, 3.05rem);
+      font-weight: 600;
+      line-height: 1.22;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      max-width: 14ch;
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 30rem;
+      margin-bottom: 1.65rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 3.15rem;
+      padding: 0.85rem 1.7rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform var(--motion-fast) var(--ease), box-shadow var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--cream);
+      border: 1px solid rgba(201, 162, 122, 0.5);
+      box-shadow: 0 14px 34px rgba(13, 13, 13, 0.2);
+      animation: ctaPulse 3.6s var(--ease) infinite;
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 14px 34px rgba(13, 13, 13, 0.2); }
+      50% { box-shadow: 0 16px 40px rgba(201, 162, 122, 0.35), 0 0 0 6px rgba(201, 162, 122, 0.12); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-primary { animation: none; }
+    }
+
+    .btn-primary:hover {
+      background: var(--black-soft);
+      box-shadow: 0 18px 42px rgba(13, 13, 13, 0.24);
+      transform: translateY(-2px);
+      animation: none;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 248, 249, 0.55);
+      color: var(--black);
+      border: 1px solid rgba(201, 162, 122, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      background: rgba(255, 248, 249, 0.85);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%);
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px var(--gold-dim);
+    }
+
+    .hero-reassure {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 1.1rem;
+      margin-top: 1.35rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid rgba(201, 162, 122, 0.28);
+    }
+
+    .hero-trust span {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(13, 13, 13, 0.58);
+    }
+
+    .hero-trust span::before {
+      content: "·";
+      color: var(--gold);
+      margin-inline-end: 0.45rem;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    /* —— Sections —— */
+    section {
+      padding-block: 5rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* —— Punch rail (endless ticker · A10) —— */
+    section.punch-rail {
+      background: var(--black);
+      color: var(--cream);
+      padding-block: 0.55rem;
+      position: relative;
+      overflow: hidden;
+      border-block: 1px solid rgba(201, 162, 122, 0.4);
+      z-index: 5;
+    }
+
+    section.punch-rail::before,
+    section.punch-rail::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2.75rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    section.punch-rail::before {
+      left: 0;
+      background: linear-gradient(to right, var(--black), transparent);
+    }
+
+    section.punch-rail::after {
+      right: 0;
+      background: linear-gradient(to left, var(--black), transparent);
+    }
+
+    .punch-track {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      direction: ltr;
+    }
+
+    .punch-marquee {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: max-content;
+      min-width: 100%;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      direction: ltr;
+    }
+
+    .punch-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 1.5rem;
+      flex-shrink: 0;
+      padding-inline-end: 1.5rem;
+      white-space: nowrap;
+      direction: ltr;
+      font-family: var(--font-display);
+      font-size: clamp(0.88rem, 1.45vw, 1.05rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .punch-group span {
+      unicode-bidi: plaintext;
+      display: inline-block;
+    }
+
+    .punch-group span.sep {
+      color: var(--gold);
+      font-size: 0.65rem;
+      opacity: 0.95;
+      animation: sepGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes sepGlow {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    .punch-rail.is-paused .punch-marquee {
+      /* hover pause via JS */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .punch-group span.sep { animation: none; }
+    }
+
+    /* Soft floating orbs in hero (P04 — slow, quiet) */
+    .hero-orbs {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(28px);
+      opacity: 0.45;
+      animation: orbFloat 14s ease-in-out infinite alternate;
+    }
+
+    .hero-orb.o1 {
+      width: 220px;
+      height: 220px;
+      background: rgba(201, 162, 122, 0.35);
+      top: 18%;
+      right: 8%;
+      animation-duration: 16s;
+    }
+
+    .hero-orb.o2 {
+      width: 160px;
+      height: 160px;
+      background: rgba(250, 218, 221, 0.55);
+      bottom: 22%;
+      right: 28%;
+      animation-duration: 12s;
+      animation-delay: -3s;
+    }
+
+    .hero-orb.o3 {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 248, 249, 0.5);
+      top: 42%;
+      left: 12%;
+      animation-duration: 18s;
+      animation-delay: -6s;
+    }
+
+    @keyframes orbFloat {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(18px, -22px, 0) scale(1.08); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-orb { animation: none; }
+    }
+
+    /* —— Services —— */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* —— Price menu (atelier cards · denser · interesting) —— */
+    .price-list {
+      max-width: none;
+      width: 100%;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 5.1rem minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      column-gap: 1rem;
+      row-gap: 0.85rem;
+      align-items: start;
+      padding: 1.2rem 1.25rem 1.15rem;
+      background:
+        linear-gradient(165deg, rgba(255, 252, 251, 0.98) 0%, rgba(255, 240, 243, 0.92) 100%);
+      border: 1px solid rgba(201, 162, 122, 0.28);
+      border-radius: 1.2rem;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.7) inset,
+        0 14px 32px rgba(13, 13, 13, 0.06);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--motion-fast) var(--ease), box-shadow var(--motion-fast) var(--ease), border-color var(--motion-fast) var(--ease);
+    }
+
+    .price-row::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      top: 18%;
+      bottom: 18%;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: 0.55;
+    }
+
+    .price-row:hover {
+      background: #fff8f9;
+      transform: translateY(-4px);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8) inset,
+        0 22px 40px rgba(13, 13, 13, 0.11);
+      border-color: rgba(201, 162, 122, 0.55);
+    }
+
+    .price-row:hover::after { opacity: 1; }
+
+    .price-row.is-featured {
+      grid-template-columns: 5.1rem minmax(0, 1fr);
+      background:
+        linear-gradient(125deg, rgba(255, 248, 249, 0.99), rgba(250, 218, 221, 0.55) 55%, rgba(255, 248, 249, 0.95));
+      border-color: rgba(201, 162, 122, 0.55);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.75) inset,
+        0 18px 40px rgba(201, 162, 122, 0.2);
+      padding: 1.45rem 1.25rem 1.2rem;
+    }
+
+    .price-row.is-featured::before {
+      content: "הטיפול הקלאסי";
+      position: absolute;
+      top: 0.75rem;
+      inset-inline-end: 1rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(255, 248, 249, 0.92);
+      border: 1px solid rgba(201, 162, 122, 0.4);
+      border-radius: 999px;
+      padding: 0.22rem 0.65rem;
+      z-index: 1;
+    }
+
+    .price-row.is-featured::after {
+      top: 12%;
+      bottom: 12%;
+      width: 4px;
+      opacity: 0.9;
+    }
+
+    .price-row img {
+      grid-row: 1 / 3;
+      width: 5.1rem;
+      height: 5.1rem;
+      border-radius: 1rem;
+      object-fit: cover;
+      border: 1px solid rgba(201, 162, 122, 0.4);
+      box-shadow: 0 10px 22px rgba(13, 13, 13, 0.1);
+    }
+
+    .price-row > div {
+      min-width: 0;
+      padding-inline-end: 0.25rem;
+    }
+
+    .price-row.is-featured > div {
+      padding-top: 0.55rem;
+    }
+
+    .price-row h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .price-row .meta {
+      display: block;
+      margin-top: 0.28rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .price-row .price-actions {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      column-gap: 0.75rem;
+      padding-top: 0.35rem;
+      border-top: 1px solid rgba(201, 162, 122, 0.22);
+      direction: ltr;
+    }
+
+    .price-row .price-reel {
+      grid-column: 2;
+      justify-self: center;
+      width: 7.5rem;
+    }
+
+    /* —— Price dial · atelier cream + gold (P09 · P17 · A18) —— */
+    .price-reel {
+      --reel-h: 1.55rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      direction: ltr;
+      isolation: isolate;
+      position: relative;
+      padding: 1.5px;
+      border-radius: 999px;
+      background: linear-gradient(145deg, #f3e0c8, var(--gold) 45%, #b8895c 100%);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.65) inset,
+        0 8px 18px rgba(201, 162, 122, 0.22);
+      white-space: nowrap;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    .price-reel-face {
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.1rem;
+      width: 100%;
+      min-height: calc(var(--reel-h) + 0.7rem);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, #fff9f8 0%, #ffeef1 48%, #f7e4df 100%);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    .price-reel-currency,
+    .price-reel-suffix,
+    .price-reel-dash {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: var(--reel-h);
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .price-reel-currency {
+      font-size: 0.88rem;
+      color: var(--gold);
+      padding-inline-end: 0.12rem;
+    }
+
+    .price-reel-suffix,
+    .price-reel-dash {
+      font-size: 1.05rem;
+      color: var(--black);
+    }
+
+    .price-reel-dash {
+      padding-inline: 0.05rem;
+      opacity: 0.7;
+    }
+
+    .price-reel-window {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: var(--reel-h);
+      overflow: hidden;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .price-reel-cols {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: var(--reel-h);
+      align-items: stretch;
+    }
+
+    .price-reel-col {
+      position: relative;
+      width: 0.78rem;
+      height: var(--reel-h);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .price-reel-strip {
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      transition: transform 1.25s cubic-bezier(0.14, 0.9, 0.2, 1);
+    }
+
+    .price-reel-strip span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: var(--reel-h);
+      min-height: var(--reel-h);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--black);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      letter-spacing: 0;
+    }
+
+    .price-reel.is-range {
+      width: 8.6rem;
+    }
+
+    .price-reel.is-range .price-reel-face {
+      gap: 0.14rem;
+      padding-inline: 0.6rem;
+    }
+
+    .price-reel.is-range .price-reel-col {
+      width: 0.7rem;
+    }
+
+    .price-reel.is-range .price-reel-dash {
+      font-size: 0.95rem;
+      opacity: 0.55;
+      padding-inline: 0.08rem;
+    }
+
+    .price-reel.is-spun {
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.75) inset,
+        0 10px 22px rgba(201, 162, 122, 0.28);
+    }
+
+    .price-row.is-featured .price-reel,
+    .price-row .price-reel {
+      --reel-h: 1.55rem;
+    }
+
+    @media (max-width: 720px) {
+      .price-row .price-reel {
+        width: 7rem;
+        justify-self: center;
+      }
+      .price-reel.is-range {
+        width: 8rem;
+      }
+      .price-reel {
+        --reel-h: 1.45rem;
+      }
+      .price-reel-col { width: 0.72rem; }
+      .price-reel.is-range .price-reel-col { width: 0.66rem; }
+      .price-reel-strip span { font-size: 1rem; }
+      .price-reel-currency { font-size: 0.82rem; }
+      .price-reel-suffix,
+      .price-reel-dash { font-size: 0.95rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .price-reel-strip { transition: none; }
+    }
+
+    .price-row .amount {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--black);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .price-row.is-featured .amount {
+      font-size: 1.45rem;
+      color: #1a1412;
+    }
+
+    .price-row .amount bdi {
+      font-family: inherit;
+    }
+
+    .price-row .book-mini {
+      grid-column: 1;
+      justify-self: start;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      white-space: nowrap;
+      background: var(--black);
+      border: 1px solid rgba(201, 162, 122, 0.45);
+      border-radius: 999px;
+      padding: 0.48rem 0.95rem;
+      transition: background var(--motion-fast) var(--ease), transform var(--motion-fast) var(--ease);
+    }
+
+    .price-row .book-mini:hover {
+      color: var(--cream);
+      background: var(--black-soft);
+      transform: translateY(-1px);
+    }
+
+    .price-tagline {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .styles-mini {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+
+    .style-chip {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.1rem;
+      aspect-ratio: 4 / 5;
+      border: 1px solid rgba(201, 162, 122, 0.45);
+      box-shadow: 0 14px 28px rgba(13, 13, 13, 0.08);
+      background: var(--cream);
+    }
+
+    .style-chip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--motion-slow) var(--ease);
+    }
+
+    .style-chip:hover img {
+      transform: scale(1.05);
+    }
+
+    .style-chip span {
+      position: absolute;
+      inset-inline: 10%;
+      bottom: 10%;
+      padding: 0.32rem 0.55rem;
+      border-radius: 0.45rem;
+      background: rgba(255, 248, 249, 0.9);
+      color: var(--black);
+      border: 1px solid rgba(201, 162, 122, 0.4);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 860px) {
+      .price-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .price-row {
+        grid-template-columns: 3.7rem 1fr;
+        column-gap: 0.8rem;
+        row-gap: 0.7rem;
+        padding: 1rem;
+      }
+      .price-row.is-featured { padding-top: 1.65rem; }
+      .price-row img,
+      .price-row.is-featured img {
+        width: 3.7rem;
+        height: 3.7rem;
+        border-radius: 0.75rem;
+      }
+      .price-row .amount,
+      .price-row.is-featured .amount { font-size: 1.18rem; }
+      .styles-mini { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .service {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255, 252, 251, 0.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      transition: border-color var(--motion-base) var(--ease), transform var(--motion-base) var(--ease), box-shadow var(--motion-base) var(--ease);
+    }
+
+    .service:hover {
+      border-color: rgba(212, 175, 55, 0.45);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-media {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: var(--pink-soft);
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--motion-slow) var(--ease);
+    }
+
+    .service:hover .service-media img {
+      transform: scale(1.04);
+    }
+
+    .service-media .sim-tag {
+      position: absolute;
+      inset-inline-start: 0.75rem;
+      top: 0.75rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: rgba(13, 13, 13, 0.72);
+      color: var(--cream);
+      z-index: 1;
+    }
+
+    .service-body {
+      padding: 1.35rem 1.4rem 1.5rem;
+    }
+
+    .service h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.15rem;
+    }
+
+    /* —— Gallery (soft nail-plate rects · Precision / P27 identity) —— */
+    .gallery {
+      padding-block: 4.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      max-width: none;
+      width: 100%;
+      margin-inline: auto;
+      justify-items: stretch;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 1.35rem;
+      border: 1px solid rgba(201, 162, 122, 0.42);
+      background: var(--cream);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 18px 40px rgba(13, 13, 13, 0.08);
+      min-height: 0;
+      clip-path: inset(0 round 1.35rem);
+      transition: transform var(--motion-base) var(--ease), box-shadow var(--motion-base) var(--ease);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(13, 13, 13, 0.12);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform var(--motion-slow) var(--ease);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item .sim-tag {
+      position: absolute;
+      inset-inline-start: 0.7rem;
+      top: 0.7rem;
+      inset-inline-end: auto;
+      bottom: auto;
+      text-align: center;
+      padding: 0.22rem 0.55rem;
+      border-radius: 0.4rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      background: rgba(255, 248, 249, 0.88);
+      color: var(--black-soft);
+      border: 1px solid rgba(201, 162, 122, 0.4);
+      z-index: 1;
+    }
+
+    .gallery-item.wide,
+    .gallery-item.tall,
+    .gallery-item.mid,
+    .gallery-item.mid2,
+    .gallery-item.mid3 {
+      grid-column: auto;
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .service-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+
+    .service-meta .price {
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .service-book {
+      color: var(--gold);
+      font-weight: 600;
+      transition: color var(--motion-fast) var(--ease);
+    }
+
+    .service-book:hover { color: var(--black); }
+
+    /* —— Before / After (physical LTR clip — reliable morph) —— */
+    .ba-wrap {
+      max-width: none;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .ba-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .ba-hook {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      margin: 0 auto 1.1rem;
+      max-width: 28rem;
+      line-height: 1.4;
+    }
+
+    .ba-frame {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      width: 100%;
+      max-width: 1100px;
+      max-height: min(78vh, 720px);
+      margin-inline: auto;
+      border-radius: 1.35rem;
+      overflow: hidden;
+      border: 1px solid rgba(201, 162, 122, 0.42);
+      box-shadow:
+        0 1px 0 rgba(255, 248, 249, 0.65) inset,
+        0 1px 2px rgba(13, 13, 13, 0.04),
+        0 28px 56px rgba(13, 13, 13, 0.14);
+      user-select: none;
+      touch-action: none;
+      cursor: ew-resize;
+      background: #1a1210;
+      direction: ltr;
+    }
+
+    .ba-layer {
+      position: absolute;
+      inset: 0;
+    }
+
+    .ba-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      display: block;
+      pointer-events: none;
+    }
+
+    @media (max-width: 720px) {
+      .ba-frame {
+        aspect-ratio: 5 / 4;
+        max-height: min(70vh, 520px);
+        border-radius: 1.05rem;
+        width: 100%;
+        max-width: none;
+      }
+      .ba-layer img {
+        object-fit: cover;
+        object-position: center 35%;
+      }
+      .ba-label {
+        top: 0.7rem;
+        padding: 0.32rem 0.7rem;
+        font-size: 0.68rem;
+      }
+      .ba-label.before { right: 0.65rem; }
+      .ba-label.after { left: 0.65rem; }
+      .ba-handle {
+        top: 18%;
+        bottom: 18%;
+        opacity: 0.65;
+      }
+    }
+
+    .ba-after { z-index: 1; }
+    .ba-before {
+      z-index: 2;
+      /* visible from handle to right = no polish */
+      clip-path: inset(0 0 0 48%);
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 1.05rem;
+      padding: 0.38rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      z-index: 4;
+      pointer-events: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 162, 122, 0.45);
+      background: rgba(255, 248, 249, 0.82);
+      color: var(--black-soft);
+      box-shadow: 0 6px 18px rgba(13, 13, 13, 0.08);
+    }
+
+    .ba-label.before { right: 1rem; left: auto; }
+    .ba-label.after { left: 1rem; right: auto; }
+
+    .ba-handle {
+      position: absolute;
+      top: 28%;
+      bottom: 28%;
+      left: 48%;
+      width: 1px;
+      margin-left: -0.5px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 252, 250, 0.22) 22%,
+        rgba(255, 252, 250, 0.22) 78%,
+        transparent
+      );
+      z-index: 5;
+      box-shadow: none;
+      pointer-events: none;
+      opacity: 0.35;
+      transition: opacity var(--motion-fast) var(--ease);
+    }
+
+    .ba-frame:hover .ba-handle,
+    .ba-frame:focus-within .ba-handle {
+      opacity: 0.7;
+    }
+
+    .ba-handle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 162, 122, 0.65);
+      box-shadow:
+        0 0 0 2px rgba(255, 248, 249, 0.35),
+        0 6px 14px rgba(13, 13, 13, 0.16);
+      background-color: rgba(13, 13, 13, 0.72);
+      background-image:
+        linear-gradient(rgba(255, 248, 249, 0.85), rgba(255, 248, 249, 0.85)),
+        linear-gradient(rgba(255, 248, 249, 0.85), rgba(255, 248, 249, 0.85));
+      background-size: 8px 1px, 1px 8px;
+      background-position: center, center;
+      background-repeat: no-repeat;
+    }
+
+    /* —— Booking —— */
+    .booking {
+      background:
+        linear-gradient(180deg, transparent, rgba(250, 218, 221, 0.35) 20%, rgba(250, 218, 221, 0.5));
+    }
+
+    .booking-shell {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+      align-items: start;
+    }
+
+    .booking-intro {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 1.25rem 2rem;
+      align-items: end;
+      padding: 1.35rem 1.5rem;
+      border-radius: 1.1rem;
+      background: rgba(255, 248, 249, 0.8);
+      border: 1px solid rgba(201, 162, 122, 0.28);
+    }
+
+    .booking-intro .section-lead { margin-bottom: 0; }
+
+    .booking-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .booking-step-hint {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      background: rgba(250, 218, 221, 0.28);
+      border: 1px solid rgba(201, 162, 122, 0.2);
+    }
+
+    .booking-step-hint strong {
+      color: var(--black);
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .booking-panel {
+      scroll-margin-top: calc(var(--header-h) + 1rem);
+      background: rgba(255, 252, 251, 0.92);
+      border: 1px solid rgba(201, 162, 122, 0.28);
+      border-radius: calc(var(--radius) + 0.25rem);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-progress {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-progress span {
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(13, 13, 13, 0.08);
+      transition: background var(--motion-base) var(--ease);
+    }
+
+    .form-progress span.active,
+    .form-progress span.done {
+      background: linear-gradient(90deg, var(--gold), var(--pink-deep));
+    }
+
+    .form-step { display: none; }
+    .form-step.active { display: block; animation: fadeUp var(--motion-slow) var(--ease); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .option-grid {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .option {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.35rem 1rem;
+      align-items: center;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--cream);
+      text-align: start;
+      transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+    }
+
+    .option:hover,
+    .option.selected {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .option .name { font-weight: 600; grid-column: 1; }
+    .option .desc { grid-column: 1; font-size: 0.82rem; color: var(--muted); }
+    .option .meta { grid-column: 2; grid-row: 1 / span 2; font-size: 0.8rem; color: var(--muted); text-align: end; }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      min-height: 2.9rem;
+      padding: 0.7rem 0.95rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--cream);
+      outline: none;
+      transition: border-color var(--motion-fast) var(--ease), box-shadow var(--motion-fast) var(--ease);
+    }
+
+    .field textarea { min-height: 5.5rem; resize: vertical; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+    }
+
+    .field .hint { font-size: 0.78rem; color: var(--muted); }
+    .field.error input,
+    .field.error select { border-color: #b42318; animation: shake 280ms var(--ease); }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+    }
+
+    .slot {
+      min-height: 2.7rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--cream);
+      font-weight: 500;
+      transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+    }
+
+    .slot:hover,
+    .slot.selected {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.12);
+    }
+
+    .slot:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .form-nav .btn { flex: 1; }
+
+    /* —— Confirmation —— */
+    .confirm-view { display: none; }
+    .confirm-view.active { display: block; animation: fadeUp var(--motion-slow) var(--ease); }
+
+    .confirm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(37, 211, 102, 0.12);
+      color: #0d7a3a;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .confirm-title {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-card {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      background: var(--pink-mist);
+      border: 1px solid var(--line);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.55rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .summary-row:last-child { border-bottom: none; }
+    .summary-row dt { color: var(--muted); }
+    .summary-row dd { font-weight: 600; text-align: end; }
+
+    .notify-sim {
+      margin-top: 1.25rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .notify-bubble {
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-sm);
+      background: var(--cream);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .notify-bubble .who {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .notify-bubble.out {
+      border-inline-start: 3px solid var(--whatsapp);
+    }
+
+    .notify-bubble.in {
+      border-inline-start: 3px solid var(--gold);
+    }
+
+    .confirm-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.35rem;
+    }
+
+    /* —— Footer —— */
+    .site-footer {
+      background:
+        radial-gradient(700px 280px at 85% 0%, rgba(201, 162, 122, 0.16), transparent 60%),
+        var(--black);
+      color: rgba(255, 252, 251, 0.78);
+      padding-block: 3.75rem 2rem;
+      border-top: 1px solid rgba(201, 162, 122, 0.35);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.35fr);
+      gap: 2.25rem 3rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    .footer-brand-block p {
+      margin: 0;
+      max-width: 22rem;
+      line-height: 1.55;
+      color: rgba(255, 252, 251, 0.65);
+      font-size: 0.92rem;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem 2rem;
+    }
+
+    .footer-cols h4 { margin-top: 0; }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-brand img {
+      display: none !important;
+    }
+
+    .footer-mark {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: radial-gradient(circle at 30% 28%, var(--gold-soft), var(--gold) 55%, #9a7350 100%);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--cream);
+      font-size: 1.05rem;
+      box-shadow: 0 0 0 1px rgba(201, 162, 122, 0.45);
+    }
+
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .footer-brand-text strong {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .footer-brand-text span {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .upload-box {
+      border: 1.5px dashed rgba(201, 162, 122, 0.55);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      background: rgba(250, 218, 221, 0.25);
+      text-align: center;
+      transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+    }
+
+    .upload-box:hover,
+    .upload-box.is-drag {
+      border-color: var(--gold);
+      background: rgba(250, 218, 221, 0.45);
+    }
+
+    .upload-box input[type="file"] {
+      display: none;
+    }
+
+    .upload-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 2.75rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--cream);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .upload-hint {
+      display: block;
+      margin-top: 0.55rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .upload-preview {
+      display: none;
+      margin-top: 0.85rem;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .upload-preview.is-on { display: flex; }
+
+    .upload-preview img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(201, 162, 122, 0.55);
+      box-shadow: 0 10px 24px rgba(201, 162, 122, 0.22);
+    }
+
+    .upload-preview button {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #b42318;
+      text-decoration: underline;
+    }
+
+    .desire-strip {
+      position: relative;
+      padding-block: 3.5rem;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(13,13,13,0.72) 0%, rgba(13,13,13,0.4) 52%, rgba(13,13,13,0.22) 100%),
+        url("./assets/images/curated/hero-yaelie-atelier-v2.jpg") 28% 40% / cover;
+      color: var(--cream);
+      text-align: start;
+    }
+
+    .desire-strip::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -8%;
+      top: -30%;
+      width: 42%;
+      height: 160%;
+      background: radial-gradient(circle, rgba(201, 162, 122, 0.28), transparent 68%);
+      animation: desireGlow 7s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes desireGlow {
+      from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.7; }
+      to { transform: translate3d(-24px, 18px, 0) scale(1.12); opacity: 1; }
+    }
+
+    .desire-strip .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem 2rem;
+      text-align: start;
+    }
+
+    .desire-strip p {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      max-width: 28rem;
+      margin: 0;
+      line-height: 1.3;
+      animation: desireText 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes desireText {
+      from { letter-spacing: -0.01em; }
+      to { letter-spacing: 0.01em; }
+    }
+
+    .desire-strip .btn {
+      margin-top: 0;
+      flex-shrink: 0;
+      animation: ctaPulse 3.6s var(--ease) infinite;
+    }
+
+    #booking {
+      scroll-margin-top: calc(var(--header-h) + 0.5rem);
+    }
+
+    #booking-panel {
+      scroll-margin-top: calc(var(--header-h) + 1rem);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .desire-strip::after,
+      .desire-strip p,
+      .desire-strip .btn { animation: none; }
+    }
+
+    @media (max-width: 720px) {
+      .desire-strip .container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .desire-strip p { max-width: none; }
+    }
+
+    .site-footer h4 {
+      color: var(--cream);
+      font-size: 0.85rem;
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-footer a {
+      display: block;
+      padding-block: 0.3rem;
+      color: rgba(255, 252, 251, 0.65);
+      font-size: 0.92rem;
+      transition: color var(--motion-fast) var(--ease);
+    }
+
+    .site-footer a:hover { color: var(--gold-soft); }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(255, 252, 251, 0.45);
+    }
+
+    /* —— Floating WhatsApp —— */
+    .wa-float {
+      position: fixed;
+      inset-inline-end: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 90;
+      width: 3.4rem;
+      height: 3.4rem;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      transition: transform var(--motion-fast) var(--ease);
+    }
+
+    .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+    .wa-float svg { width: 1.55rem; height: 1.55rem; fill: currentColor; }
+
+    /* —— Sticky book (mobile) —— */
+    .sticky-book {
+      display: none;
+      position: fixed;
+      inset-inline: 1rem;
+      bottom: 1rem;
+      z-index: 85;
+      min-height: 3.2rem;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--cream);
+      font-weight: 600;
+      box-shadow: 0 14px 36px rgba(13, 13, 13, 0.28);
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* —— Reveal —— */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity var(--motion-slow) var(--ease), transform var(--motion-slow) var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* —— Responsive —— */
+    @media (max-width: 960px) {
+      .hero {
+        min-height: auto;
+        padding-block: calc(var(--header-h) + 1.25rem) 3rem;
+      }
+
+      .hero-bg img {
+        object-position: 38% 35%;
+      }
+
+      .hero-ghost {
+        top: 12%;
+        opacity: 0.9;
+        font-size: clamp(3.5rem, 22vw, 6rem);
+      }
+
+      .hero-veil {
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(255, 240, 243, 0.55) 0%,
+            rgba(250, 218, 221, 0.78) 38%,
+            rgba(250, 218, 221, 0.96) 100%
+          );
+      }
+
+      .hero .container {
+        justify-content: flex-start;
+        width: min(1280px, calc(100% - 1.25rem));
+      }
+
+      .booking-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-veil {
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(255, 240, 243, 0.55) 0%,
+            rgba(250, 218, 221, 0.82) 42%,
+            rgba(250, 218, 221, 0.96) 100%
+          );
+      }
+
+      .hero-copy {
+        max-width: 100%;
+        padding: 0.25rem 0 0;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+
+      .services-grid,
+      .booking-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 1.25rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: none;
+      }
+
+      .gallery-item {
+        width: 100%;
+      }
+
+      .nav {
+        position: static;
+        transform: none;
+        left: auto;
+        top: auto;
+        width: auto;
+        max-width: none;
+        pointer-events: auto;
+      }
+
+      .nav-links { display: none; }
+
+      .nav-toggle { display: inline-flex; }
+
+      .header-cta .nav-cta { display: none; }
+
+      .nav.open .nav-links {
+        display: flex;
+        position: absolute;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        transform: none;
+        width: auto;
+        max-width: none;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(255, 240, 243, 0.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(201, 162, 122, 0.35);
+        padding: 1rem 1.25rem 1.25rem;
+        box-shadow: 0 18px 40px rgba(13, 13, 13, 0.08);
+        pointer-events: auto;
+        z-index: 20;
+      }
+
+      .nav.open .nav-links a {
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgba(13, 13, 13, 0.06);
+      }
+
+      .sticky-book { display: flex; }
+      .wa-float { bottom: 5.2rem; }
+      body { padding-bottom: 5rem; }
+    }
+
+    @media (max-width: 520px) {
+      .slots { grid-template-columns: repeat(2, 1fr); }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#booking-panel">דילוג לקביעת תור</a>
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="YAELIE NAILS — דף הבית">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Yaelie Nails</span>
+          <span class="brand-sub">Luxury Atelier</span>
+        </span>
+      </a>
+      <div class="header-cta">
+        <a class="nav-cta" href="#booking-panel">לקביעת תור</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="תפריט">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="nav" id="main-nav" aria-label="ניווט ראשי">
+      <div class="nav-links" id="nav-links">
+        <a href="#pricing">מחירון</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#results">לפני ואחרי</a>
+        <a href="#booking-panel">קביעת תור</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="פתיח">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="./assets/images/curated/hero-yaelie-atelier-v2.jpg?v=1"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-orbs" aria-hidden="true">
+        <span class="hero-orb o1"></span>
+        <span class="hero-orb o2"></span>
+        <span class="hero-orb o3"></span>
+      </div>
+      <p class="hero-ghost" aria-hidden="true">YAELIE</p>
+      <div class="container">
+        <div class="hero-copy">
+          <p class="hero-brand-mark">Yaelie</p>
+          <p class="hero-kicker">Luxury Nail Atelier</p>
+          <h1>רואה את הציפורניים בראש? תור בדקה.</h1>
+          <p class="hero-lead">
+            שירות · דוגמה למטפלת · אישור על המסך. בלי טלפונים. בלי ״נחזור אלייך״.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking-panel">קובעות תור</a>
+            <a class="btn btn-ghost" id="hero-wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+          </div>
+          <p class="hero-reassure">אישור מיידי · בלי המתנה</p>
+          <div class="hero-trust" aria-label="סמני אמון">
+            <span>מחיר כולל מע״מ</span>
+            <span>מעלים דוגמה</span>
+            <span>תזכורת ליום שלפני</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="punch-rail" id="punch-rail" aria-label="מסרים קצרים">
+      <div class="punch-track">
+        <div class="punch-marquee" id="punch-marquee">
+          <div class="punch-group">
+            <span>כל יום בלי תור = עוד שבוע פחות את</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>ברק שלא דוהה · מבנה מדויק · יחס של נסיכה</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>מעלות דוגמה — המטפלת יודעת לפני שנכנסת</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>מחיר שקוף. אישור מיידי. בלי לחץ מזויף</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>קובעות תור בדקה · אישור על המסך</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>הזמן הזה הוא עכשיו — לא ״מתי שיהיה״</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>דיוק של אטלייה · בלי המתנה · בלי טלפונים</span>
+            <span class="sep" aria-hidden="true">✦</span>
+          </div>
+          <div class="punch-group" aria-hidden="true">
+            <span>כל יום בלי תור = עוד שבוע פחות את</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>ברק שלא דוהה · מבנה מדויק · יחס של נסיכה</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>מעלות דוגמה — המטפלת יודעת לפני שנכנסת</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>מחיר שקוף. אישור מיידי. בלי לחץ מזויף</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>קובעות תור בדקה · אישור על המסך</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>הזמן הזה הוא עכשיו — לא ״מתי שיהיה״</span>
+            <span class="sep" aria-hidden="true">✦</span>
+            <span>דיוק של אטלייה · בלי המתנה · בלי טלפונים</span>
+            <span class="sep" aria-hidden="true">✦</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="pricing">
+      <div class="container">
+        <p class="section-label reveal" style="text-align:center;display:block;">מחירון אטלייה</p>
+        <h2 class="section-title reveal" style="text-align:center;">המספר נופל. המחיר נעול.</h2>
+        <p class="section-lead reveal" style="text-align:center;margin-inline:auto;">כל מחיר כולל מע״מ. בלי ״נתחיל מ־״ ובלי הפתעות בקופה — רק המספר שנבחר על הגלגל.</p>
+
+        <div class="price-list">
+          <article class="price-row is-featured reveal">
+            <img src="./assets/images/curated/client-pink-gold.png" alt="" />
+            <div>
+              <h3>לק ג'ל + מבנה אנטומי</h3>
+              <span class="meta">הטיפול שחוזרות אליו · הכי נבחר</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel" data-price="120" aria-label="מחיר 120 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="gel_anatomy">לתור</a>
+            </div>
+          </article>
+          <article class="price-row reveal">
+            <img src="./assets/images/curated/client-milky-silver.png" alt="" />
+            <div>
+              <h3>בנייה בטיפס הפוך</h3>
+              <span class="meta">אורך וחוזק מקסימליים</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel" data-price="260" aria-label="מחיר 260 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="reverse_tips">לתור</a>
+            </div>
+          </article>
+          <article class="price-row reveal">
+            <img src="./assets/images/curated/client-milky-clean.png" alt="" />
+            <div>
+              <h3>בנייה</h3>
+              <span class="meta">מבנה מדויק לאורך זמן</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel" data-price="250" aria-label="מחיר 250 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="build">לתור</a>
+            </div>
+          </article>
+          <article class="price-row reveal">
+            <img src="./assets/images/curated/extra-nail-studio.jpg" alt="" />
+            <div>
+              <h3>הסרת לק ג'ל</h3>
+              <span class="meta">הסרה עדינה ומקצועית</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel" data-price="30" aria-label="מחיר 30 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="removal">לתור</a>
+            </div>
+          </article>
+          <article class="price-row reveal">
+            <img src="./assets/images/curated/extra-manicure-soft.jpg" alt="" />
+            <div>
+              <h3>פרנץ'</h3>
+              <span class="meta">תוספת קצה לבן</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel" data-price="10" aria-label="מחיר 10 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="french">לתור</a>
+            </div>
+          </article>
+          <article class="price-row reveal">
+            <img src="./assets/images/curated/client-burgundy-gold.png" alt="" />
+            <div>
+              <h3>קישוטים</h3>
+              <span class="meta">לפי מורכבות · מ־10 עד 20</span>
+            </div>
+            <div class="price-actions">
+              <span class="price-reel is-range" data-price="10" data-price-to="20" aria-label="מחיר 10 עד 20 שקלים"></span>
+              <a class="book-mini service-book" href="#booking-panel" data-service="decor">לתור</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="price-tagline reveal">לוחצות ״לתור״ — ושומרות מקום לפני שהיומן מתמלא</p>
+        <p class="vat-note reveal">מה שנעצר על הגלגל — זה מה שמשלמים · כולל מע״מ</p>
+
+        <div class="styles-mini reveal" aria-label="צורות פופולריות">
+          <div class="style-chip"><img src="./assets/images/curated/client-milky-silver.png" alt="" /><span>שפיץ</span></div>
+          <div class="style-chip"><img src="./assets/images/curated/client-milky-clean.png" alt="" /><span>מרובע</span></div>
+          <div class="style-chip"><img src="./assets/images/curated/client-pink-gold.png" alt="" /><span>עיצוב</span></div>
+          <div class="style-chip"><img src="./assets/images/curated/client-burgundy-gold.png" alt="" /><span>בנייה</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <p class="section-label reveal">הקטלוג</p>
+        <h2 class="section-title reveal">דיוק שנראה יקר</h2>
+        <p class="section-lead reveal">מסגרות רכות בסגנון Precision — לא עיגולים. מסומן הדמיה עד לצילומי האטלייה.</p>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/client-pink-gold.png" alt="הדמיה: לק ורוד בייבי עם טבעת זהב" loading="lazy" width="400" height="500" />
+          </figure>
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/client-milky-silver.png" alt="הדמיה: לק חלבי עם טבעת כסף" loading="lazy" width="400" height="500" />
+          </figure>
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/client-milky-clean.png" alt="הדמיה: לק חלבי נקי על בד לבן" loading="lazy" width="400" height="500" />
+          </figure>
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/client-burgundy-gold.png" alt="הדמיה: לק בורדו עם טבעת זהב" loading="lazy" width="400" height="500" />
+          </figure>
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/luxury-french.jpg" alt="הדמיה: פרנץ' קלאסי" loading="lazy" width="400" height="500" />
+          </figure>
+          <figure class="gallery-item reveal">
+            <span class="sim-tag">הדמיה</span>
+            <img src="./assets/images/curated/extra-pink-ombre.jpg" alt="הדמיה: אומברה ורוד" loading="lazy" width="400" height="500" />
+          </figure>
+        </div>
+        <p class="gallery-note">הדמיה לצורכי תצוגה · יוחלף בצילומי YAELIE NAILS</p>
+      </div>
+    </section>
+
+    <section class="desire-strip" aria-label="קריאה לפעולה">
+      <div class="container">
+        <p>רואה את התוצאה בראש? התור הזה — עכשיו.</p>
+        <a class="btn btn-gold" href="#booking-panel">קובעות תור</a>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <p class="section-label reveal" style="text-align:center;width:100%;display:block;">ההבדל על האצבע</p>
+        <h2 class="section-title reveal" style="text-align:center;">ציפורן טבעית → לק ג׳ל ורוד בייבי</h2>
+        <p class="section-lead reveal" style="text-align:center;margin-inline:auto;">גררי את הסרגל — אותה יד, אותו אור. בלי לק מימין, עם הלק משמאל.</p>
+        <div class="ba-wrap reveal">
+          <p class="ba-hook">זה הרגע שבו רוב הלקוחות מחליטות לקבוע תור.</p>
+          <p class="ba-note">צילום פרימיום · אותה קומפוזיציה לפני ואחרי</p>
+          <div class="ba-frame" id="ba-frame" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48" aria-label="השוואת לפני ואחרי — גררי את הסרגל">
+            <div class="ba-layer ba-after">
+              <img src="./assets/images/curated/ba-morph-after.jpg?v=13" alt="אחרי: לק ג'ל ורוד בייבי מבריק" width="1400" height="1050" loading="lazy" />
+            </div>
+            <div class="ba-layer ba-before" id="ba-before">
+              <img src="./assets/images/curated/ba-morph-before.jpg?v=13" alt="לפני: ציפורן טבעית בלי לק" width="1400" height="1050" loading="lazy" />
+            </div>
+            <span class="ba-label before">לפני · בלי לק</span>
+            <span class="ba-label after">אחרי · עם לק</span>
+            <div class="ba-handle" id="ba-handle" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="container">
+        <div class="booking-shell">
+          <div class="booking-intro reveal">
+            <div>
+              <p class="section-label">קביעת תור</p>
+              <h2 class="section-title">ארבע דקות. תור שמור.</h2>
+              <p class="section-lead">בחירת שירות, תאריך ושעה — וסיכום מלא על המסך.</p>
+            </div>
+            <div class="booking-steps">
+              <div class="booking-step-hint">
+                <div>
+                  <strong>01 · שירות</strong>
+                  בוחרות את הטיפול.
+                </div>
+              </div>
+              <div class="booking-step-hint">
+                <div>
+                  <strong>02 · זמן</strong>
+                  תאריך ושעה פנויה.
+                </div>
+              </div>
+              <div class="booking-step-hint">
+                <div>
+                  <strong>03 · פרטים</strong>
+                  שם וטלפון בלבד.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-panel reveal" id="booking-panel">
+            <div class="resume-banner" id="resume-banner" role="status">
+              <span>נמצאה התחלה של תור קודם — להמשיך מאיפה שעצרת?</span>
+              <button type="button" class="btn btn-ghost" id="resume-btn" style="min-height:2.4rem;padding:0.45rem 1rem;">להמשך</button>
+            </div>
+            <form id="booking-form" novalidate>
+              <div class="form-progress" aria-hidden="true">
+                <span class="active" data-p="1"></span>
+                <span data-p="2"></span>
+                <span data-p="3"></span>
+                <span data-p="4"></span>
+              </div>
+
+              <div class="form-step active" data-step="1">
+                <h3>בחירת שירות</h3>
+                <div class="option-grid" id="service-options" role="radiogroup" aria-label="שירותים">
+                  <button type="button" class="option" data-value="gel_anatomy" data-label="לק ג'ל + מבנה אנטומי" data-price="120">
+                    <span class="name">לק ג'ל + מבנה אנטומי</span>
+                    <span class="desc">הטיפול הקלאסי של האטלייה</span>
+                    <span class="meta"><bdi>₪120</bdi></span>
+                  </button>
+                  <button type="button" class="option" data-value="reverse_tips" data-label="בנייה בטיפס הפוך" data-price="260">
+                    <span class="name">בנייה בטיפס הפוך</span>
+                    <span class="desc">אורך וחוזק מקסימליים</span>
+                    <span class="meta"><bdi>₪260</bdi></span>
+                  </button>
+                  <button type="button" class="option" data-value="build" data-label="בנייה" data-price="250">
+                    <span class="name">בנייה</span>
+                    <span class="desc">מבנה מדויק לאורך זמן</span>
+                    <span class="meta"><bdi>₪250</bdi></span>
+                  </button>
+                  <button type="button" class="option" data-value="removal" data-label="הסרת לק ג'ל" data-price="30">
+                    <span class="name">הסרת לק ג'ל</span>
+                    <span class="desc">הסרה מקצועית ועדינה</span>
+                    <span class="meta"><bdi>₪30</bdi></span>
+                  </button>
+                  <button type="button" class="option" data-value="french" data-label="פרנץ'" data-price="10">
+                    <span class="name">פרנץ'</span>
+                    <span class="desc">תוספת קצה לבן קלאסי</span>
+                    <span class="meta"><bdi>₪10</bdi></span>
+                  </button>
+                  <button type="button" class="option" data-value="decor" data-label="קישוטים" data-price="10-20">
+                    <span class="name">קישוטים</span>
+                    <span class="desc">לפי מורכבות העיצוב</span>
+                    <span class="meta"><bdi>₪10–20</bdi></span>
+                  </button>
+                </div>
+                <div class="form-nav">
+                  <span></span>
+                  <button type="button" class="btn btn-primary" data-next>המשך לתאריך</button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="2">
+                <h3>בחירת תאריך</h3>
+                <div class="field">
+                  <label for="appt-date">תאריך התור</label>
+                  <input type="date" id="appt-date" name="date" required />
+                  <span class="hint">מוצגים ימי חול בלבד לצורך הדגמה</span>
+                </div>
+                <div class="form-nav">
+                  <button type="button" class="btn btn-ghost" data-back>חזרה</button>
+                  <button type="button" class="btn btn-primary" data-next>המשך לשעה</button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="3">
+                <h3>בחירת שעה</h3>
+                <div class="slots" id="time-slots" role="radiogroup" aria-label="שעות פנויות"></div>
+                <div class="form-nav">
+                  <button type="button" class="btn btn-ghost" data-back>חזרה</button>
+                  <button type="button" class="btn btn-primary" data-next>המשך לפרטים</button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="4">
+                <h3>הפרטים שלך</h3>
+                <div class="field">
+                  <label for="client-name">שם מלא</label>
+                  <input type="text" id="client-name" name="name" autocomplete="name" maxlength="80" required placeholder="למשל: נועה כהן" />
+                </div>
+                <div class="field">
+                  <label for="client-phone">טלפון</label>
+                  <input type="tel" id="client-phone" name="phone" autocomplete="tel" maxlength="15" required placeholder="05X-XXXXXXX" dir="ltr" />
+                  <span class="hint">לאישור ולתזכורת בלבד</span>
+                </div>
+                <div class="field">
+                  <label for="client-notes">הערה (אופציונלי)</label>
+                  <textarea id="client-notes" name="notes" maxlength="300" placeholder="אלרגיות, עיצוב מבוקש, העדפת צבע…"></textarea>
+                </div>
+                <div class="field">
+                  <span id="ref-label">תמונת דוגמה למטפלת (אופציונלי)</span>
+                  <div class="upload-box" id="upload-box" role="group" aria-labelledby="ref-label">
+                    <label class="upload-trigger" for="ref-photo">העלאת תמונת השראה</label>
+                    <input type="file" id="ref-photo" name="refPhoto" accept="image/jpeg,image/png,image/webp" />
+                    <span class="upload-hint">JPG / PNG · עד 3MB · המטפלת תראה את הדוגמה לפני הטיפול</span>
+                    <div class="upload-preview" id="upload-preview">
+                      <img id="upload-thumb" alt="תצוגה מקדימה של תמונת הדוגמה" />
+                      <button type="button" id="upload-clear">הסרת תמונה</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-nav">
+                  <button type="button" class="btn btn-ghost" data-back>חזרה</button>
+                  <p class="vat-note" style="text-align:start;margin:0 0 0.85rem;">בלחיצה על אישור — הפרטים נשמרים בהדגמה במכשיר זה בלבד (לא נשלחים לשרת). בהשקה יחולו מדיניות הפרטיות ותנאי הביטול המלאים.</p>
+                  <button type="submit" class="btn btn-gold" id="submit-booking">לאישור התור</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="confirm-view" id="confirm-view" aria-live="polite">
+              <div class="confirm-badge">✓ התור נשמר במערכת ההדגמה</div>
+              <h3 class="confirm-title">סיכום ההזמנה</h3>
+              <p style="color:var(--muted);font-size:0.92rem;">הפרטים המלאים למטה. אפשר להוריד CSV או לפתוח וואטסאפ לשלב הבא.</p>
+              <dl class="summary-card" id="summary-card"></dl>
+              <div class="notify-sim" id="notify-sim"></div>
+              <div class="confirm-actions">
+                <button type="button" class="btn btn-primary" id="export-csv">הורדת פרטי התור (CSV)</button>
+                <a class="btn btn-ghost" id="confirm-wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer">פתיחת וואטסאפ</a>
+                <button type="button" class="btn btn-ghost" id="new-booking">קביעת תור נוסף</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-bar reveal" aria-label="סמני אמון" style="margin-top:2rem;">
+          <p><strong>מחירים שקופים</strong>מה שרואים במחירון — זה מה שמשלמים</p>
+          <p><strong>בלי לחץ מזויף</strong>אין טיימרים ומלאי פיקטיבי</p>
+          <p><strong>אישור מיידי</strong>סיכום על המסך + אפשרות CSV</p>
+        </div>
+
+        <div class="faq reveal" id="faq">
+          <details>
+            <summary>כמה זמן מחזיק הלק ג'ל?</summary>
+            <p>תלוי באורח חיים ובסוג הציפורן. נתאים חומרים וטיפול לתחזוקה נוחה. פרטים מדויקים — אחרי פגישה ראשונה.</p>
+          </details>
+          <details>
+            <summary>המחירים כוללים מע״מ?</summary>
+            <p>כן. המחירים במחירון מוצגים כפי שהם לתשלום.</p>
+          </details>
+          <details>
+            <summary>איך מבטלים או משנים תור?</summary>
+            <p>ביטול או שינוי — דרך וואטסאפ. מדיניות מלאה תפורסם עם פרטי העסק.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <div class="footer-brand">
+            <span class="footer-mark" aria-hidden="true">Y</span>
+            <span class="footer-brand-text">
+              <strong>Yaelie Nails</strong>
+              <span>Luxury Atelier</span>
+            </span>
+          </div>
+          <p>מחירון שקוף · שפיץ, מרובע, עיצוב ובנייה. תור בדקה — אישור על המסך.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h4>ניווט</h4>
+            <a href="#pricing">מחירון</a>
+            <a href="#gallery">גלריה</a>
+            <a href="#results">לפני ואחרי</a>
+            <a href="#booking-panel">קביעת תור</a>
+          </div>
+          <div>
+            <h4>מידע וקשר</h4>
+            <a href="#faq">שאלות נפוצות</a>
+            <a href="mailto:hello@yaelienails.example">מייל שירות</a>
+            <a id="footer-wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+            <p style="margin:0.55rem 0 0;color:rgba(255,252,251,0.55);font-size:0.82rem;line-height:1.5;">שעות מענה ימולאו עם פרטי העסק.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> YAELIE NAILS</span>
+        <span>Luxury Nail Atelier</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="wa-float" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="וואטסאפ">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.76 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.75h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.74.98 1-3.64-.24-.37a9.82 9.82 0 0 1-1.5-5.23c0-5.43 4.42-9.85 9.86-9.85a9.8 9.8 0 0 1 9.85 9.86c0 5.43-4.42 9.84-9.84 9.84zm5.4-7.37c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+  </a>
+
+  <a class="sticky-book" href="#booking-panel">לקביעת תור</a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const WA_NUMBER = ""; // ניתן למלא מספר בינלאומי, למשל 9725XXXXXXXX
+      const WA_TEXT = encodeURIComponent("היי YAELIE NAILS, אשמח לקבוע תור לק ג'ל / מבנה אנטומי");
+
+      function waUrl() {
+        if (!WA_NUMBER) return "https://wa.me/?text=" + WA_TEXT;
+        return "https://wa.me/" + WA_NUMBER + "?text=" + WA_TEXT;
+      }
+
+      ["hero-wa", "wa-float", "confirm-wa", "footer-wa"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = waUrl();
+      });
+
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+
+      /* —— Header glass → solid on scroll —— */
+      const siteHeader = document.getElementById("site-header");
+      const onHeaderScroll = () => {
+        if (!siteHeader) return;
+        siteHeader.classList.toggle("is-solid", window.scrollY > 18);
+      };
+      onHeaderScroll();
+      window.addEventListener("scroll", onHeaderScroll, { passive: true });
+
+      /* —— Mobile nav —— */
+      const nav = document.getElementById("main-nav");
+      const toggle = document.getElementById("nav-toggle");
+      toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      nav.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        })
+      );
+
+      /* —— Endless punch ticker (always full, seamless loop) —— */
+      (function initPunchTicker() {
+        const rail = document.getElementById("punch-rail");
+        const marquee = document.getElementById("punch-marquee");
+        if (!rail || !marquee) return;
+
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce) return;
+
+        const seed = marquee.querySelector(".punch-group");
+        if (!seed) return;
+
+        // Always keep ≥3× viewport of identical groups so edges never go blank
+        function fillTrack() {
+          const need = Math.max(rail.clientWidth * 3.5, seed.offsetWidth * 3, 2800);
+          while (marquee.children.length > 2) {
+            marquee.removeChild(marquee.lastElementChild);
+          }
+          void marquee.offsetWidth;
+          let guard = 0;
+          while (marquee.scrollWidth < need && guard < 30) {
+            const clone = seed.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            marquee.appendChild(clone);
+            guard += 1;
+          }
+        }
+        fillTrack();
+        requestAnimationFrame(fillTrack);
+        window.addEventListener("resize", fillTrack, { passive: true });
+
+        let x = 0;
+        let paused = false;
+        const speed = 0.55;
+
+        rail.addEventListener("mouseenter", () => { paused = true; });
+        rail.addEventListener("mouseleave", () => { paused = false; });
+        rail.addEventListener("touchstart", () => { paused = true; }, { passive: true });
+        rail.addEventListener("touchend", () => { paused = false; }, { passive: true });
+
+        function unitWidth() {
+          const g = marquee.querySelector(".punch-group");
+          return g ? Math.round(g.getBoundingClientRect().width) : 0;
+        }
+
+        function frame() {
+          if (!paused) {
+            x -= speed;
+            const unit = unitWidth();
+            // Reset by exactly one group — content behind is identical, no blank flash
+            if (unit > 0 && -x >= unit) x += unit;
+            marquee.style.transform = "translate3d(" + x.toFixed(2) + "px,0,0)";
+          }
+          requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      })();
+
+      /* —— Price reels (P09 · P13 · P17 · A18) —— */
+      (function initPriceReels() {
+        const reels = document.querySelectorAll(".price-reel[data-price]");
+        if (!reels.length) return;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function makeDigitCols(digits, loopBase) {
+          const windowEl = document.createElement("span");
+          windowEl.className = "price-reel-window";
+          const cols = document.createElement("span");
+          cols.className = "price-reel-cols";
+
+          digits.forEach((digit, idx) => {
+            const col = document.createElement("span");
+            col.className = "price-reel-col";
+            const strip = document.createElement("span");
+            strip.className = "price-reel-strip";
+            const loops = reduce ? 1 : loopBase + (idx % 2);
+            const sequence = [];
+            for (let l = 0; l < loops; l += 1) {
+              for (let n = 0; n <= 9; n += 1) sequence.push(String(n));
+            }
+            sequence.push(digit);
+            sequence.forEach((n) => {
+              const s = document.createElement("span");
+              s.textContent = n;
+              strip.appendChild(s);
+            });
+            col.appendChild(strip);
+            cols.appendChild(col);
+            strip.dataset.targetIndex = String(sequence.length - 1);
+          });
+
+          windowEl.appendChild(cols);
+          return windowEl;
+        }
+
+        function buildReel(el) {
+          const raw = String(el.getAttribute("data-price") || "0");
+          const toRaw = el.getAttribute("data-price-to") || "";
+          const digits = raw.replace(/[^\d]/g, "").split("");
+          const toDigits = toRaw.replace(/[^\d]/g, "").split("");
+          if (!digits.length) return;
+
+          el.innerHTML = "";
+          const face = document.createElement("span");
+          face.className = "price-reel-face";
+
+          const currency = document.createElement("span");
+          currency.className = "price-reel-currency";
+          currency.textContent = "₪";
+          currency.setAttribute("aria-hidden", "true");
+          face.appendChild(currency);
+
+          face.appendChild(makeDigitCols(digits, 3));
+
+          if (toDigits.length) {
+            el.classList.add("is-range");
+            const dash = document.createElement("span");
+            dash.className = "price-reel-dash";
+            dash.textContent = "–";
+            dash.setAttribute("aria-hidden", "true");
+            face.appendChild(dash);
+            face.appendChild(makeDigitCols(toDigits, 2));
+          }
+
+          el.appendChild(face);
+        }
+
+        function spinReel(el) {
+          if (el.classList.contains("is-spun")) return;
+          el.classList.add("is-spun");
+          const strips = el.querySelectorAll(".price-reel-strip");
+          strips.forEach((strip, i) => {
+            const target = Number(strip.dataset.targetIndex || 0);
+            const delay = reduce ? 0 : 90 * i;
+            const duration = reduce ? 0 : 1100 + i * 180;
+            strip.style.transitionDuration = duration + "ms";
+            window.setTimeout(() => {
+              strip.style.transform = "translate3d(0, calc(var(--reel-h) * " + (-target) + "), 0)";
+            }, delay);
+          });
+        }
+
+        reels.forEach(buildReel);
+
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  spinReel(entry.target);
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.45, rootMargin: "0px 0px -8% 0px" }
+          );
+          reels.forEach((el) => io.observe(el));
+        } else {
+          reels.forEach(spinReel);
+        }
+      })();
+
+      /* —— Reveal on scroll —— */
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+        reveals.forEach((el) => io.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("in"));
+      }
+
+      /* —— Before / After morph (physical left = after / polish) —— */
+      const frame = document.getElementById("ba-frame");
+      const before = document.getElementById("ba-before");
+      const handle = document.getElementById("ba-handle");
+      let baDragging = false;
+
+      function setBa(pct) {
+        const p = Math.min(96, Math.max(4, pct));
+        // before layer visible from p% → 100% (right = no polish)
+        before.style.clipPath = "inset(0 0 0 " + p + "%)";
+        handle.style.left = p + "%";
+        frame.setAttribute("aria-valuenow", String(Math.round(p)));
+      }
+
+      function baFromEvent(e) {
+        const rect = frame.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const ratio = (clientX - rect.left) / rect.width;
+        setBa(ratio * 100);
+      }
+
+      frame.addEventListener("pointerdown", (e) => {
+        baDragging = true;
+        frame.setPointerCapture(e.pointerId);
+        baFromEvent(e);
+      });
+      frame.addEventListener("pointermove", (e) => {
+        if (!baDragging) return;
+        baFromEvent(e);
+      });
+      frame.addEventListener("pointerup", () => { baDragging = false; });
+      frame.addEventListener("pointercancel", () => { baDragging = false; });
+      setBa(48);
+
+      /* —— Booking state —— */
+      const SERVICES = {
+        gel_anatomy: { label: "לק ג'ל + מבנה אנטומי", price: "₪120" },
+        reverse_tips: { label: "בנייה בטיפס הפוך", price: "₪260" },
+        build: { label: "בנייה", price: "₪250" },
+        removal: { label: "הסרת לק ג'ל", price: "₪30" },
+        french: { label: "פרנץ'", price: "₪10" },
+        decor: { label: "קישוטים", price: "₪10–20" },
+      };
+
+      const DEMO_SLOTS = ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00", "18:30"];
+      const DRAFT_KEY = "lolilak_booking_draft_v1";
+
+      const state = {
+        step: 1,
+        service: null,
+        date: "",
+        time: "",
+        name: "",
+        phone: "",
+        notes: "",
+        refName: "",
+        refData: "",
+        status: "ממתין לאישור",
+        id: "",
+      };
+
+      const form = document.getElementById("booking-form");
+      const confirmView = document.getElementById("confirm-view");
+      const progress = form.querySelectorAll(".form-progress span");
+      const resumeBanner = document.getElementById("resume-banner");
+      const toastEl = document.getElementById("toast");
+      let toastTimer = null;
+
+      function showToast(msg) {
+        if (!toastEl) return;
+        toastEl.textContent = msg;
+        toastEl.classList.add("is-on");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.remove("is-on"), 3200);
+      }
+
+      function saveDraft() {
+        try {
+          const draft = {
+            step: state.step,
+            service: state.service,
+            date: state.date,
+            time: state.time,
+            name: state.name,
+            phone: state.phone,
+            notes: state.notes,
+            refName: state.refName || "",
+          };
+          localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+        } catch (_) { /* private mode / quota */ }
+      }
+
+      function clearDraft() {
+        try { localStorage.removeItem(DRAFT_KEY); } catch (_) {}
+        if (resumeBanner) resumeBanner.classList.remove("is-on");
+      }
+
+      function readDraft() {
+        try {
+          const raw = localStorage.getItem(DRAFT_KEY);
+          if (!raw) return null;
+          return JSON.parse(raw);
+        } catch (_) {
+          return null;
+        }
+      }
+
+      function applyDraft(draft) {
+        if (!draft) return;
+        state.service = draft.service || null;
+        state.date = draft.date || "";
+        state.time = draft.time || "";
+        state.name = draft.name || "";
+        state.phone = draft.phone || "";
+        state.notes = draft.notes || "";
+        if (state.service) selectService(state.service);
+        if (state.date) {
+          dateInput.value = state.date;
+          renderSlots();
+        }
+        const nameEl = document.getElementById("client-name");
+        const phoneEl = document.getElementById("client-phone");
+        const notesEl = document.getElementById("client-notes");
+        if (nameEl) nameEl.value = state.name;
+        if (phoneEl) phoneEl.value = state.phone;
+        if (notesEl) notesEl.value = state.notes;
+        goStep(Math.min(4, Math.max(1, Number(draft.step) || 1)));
+      }
+
+      function goStep(n) {
+        state.step = n;
+        form.querySelectorAll(".form-step").forEach((s) => {
+          s.classList.toggle("active", Number(s.dataset.step) === n);
+        });
+        progress.forEach((p) => {
+          const i = Number(p.dataset.p);
+          p.classList.toggle("active", i === n);
+          p.classList.toggle("done", i < n);
+        });
+      }
+
+      document.querySelectorAll(".service-book").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const v = btn.dataset.service;
+          selectService(v);
+          goStep(1);
+          confirmView.classList.remove("active");
+          form.style.display = "";
+          const panel = document.getElementById("booking-panel");
+          if (panel) {
+            panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          history.replaceState(null, "", "#booking-panel");
+        });
+      });
+
+      function selectService(value) {
+        state.service = value;
+        document.querySelectorAll("#service-options .option").forEach((o) => {
+          o.classList.toggle("selected", o.dataset.value === value);
+        });
+      }
+
+      document.querySelectorAll("#service-options .option").forEach((o) => {
+        o.addEventListener("click", () => selectService(o.dataset.value));
+      });
+
+      const dateInput = document.getElementById("appt-date");
+      const today = new Date();
+      const min = new Date(today);
+      min.setDate(min.getDate() + 1);
+      dateInput.min = min.toISOString().slice(0, 10);
+      const max = new Date(today);
+      max.setDate(max.getDate() + 45);
+      dateInput.max = max.toISOString().slice(0, 10);
+
+      dateInput.addEventListener("change", () => {
+        state.date = dateInput.value;
+        state.time = "";
+        renderSlots();
+        saveDraft();
+      });
+
+      function renderSlots() {
+        const wrap = document.getElementById("time-slots");
+        wrap.innerHTML = "";
+        if (!state.date) {
+          wrap.innerHTML = "<p style='grid-column:1/-1;color:var(--muted);font-size:0.9rem;'>בחרו תאריך קודם</p>";
+          return;
+        }
+        const day = new Date(state.date + "T12:00:00");
+        const weekend = day.getDay() === 5 || day.getDay() === 6;
+        DEMO_SLOTS.forEach((t, idx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "slot";
+          btn.textContent = t;
+          btn.disabled = weekend && idx % 2 === 0;
+          if (state.time === t) btn.classList.add("selected");
+          btn.addEventListener("click", () => {
+            state.time = t;
+            wrap.querySelectorAll(".slot").forEach((s) => s.classList.remove("selected"));
+            btn.classList.add("selected");
+            saveDraft();
+          });
+          wrap.appendChild(btn);
+        });
+      }
+
+      function validateStep(n) {
+        if (n === 1 && !state.service) {
+          flashOptions();
+          return false;
+        }
+        if (n === 2) {
+          const field = dateInput.closest(".field");
+          if (!dateInput.value) {
+            field.classList.add("error");
+            dateInput.focus();
+            return false;
+          }
+          field.classList.remove("error");
+          state.date = dateInput.value;
+        }
+        if (n === 3 && !state.time) {
+          const wrap = document.getElementById("time-slots");
+          wrap.style.outline = "2px solid #b42318";
+          setTimeout(() => (wrap.style.outline = ""), 600);
+          return false;
+        }
+        if (n === 4) {
+          const name = document.getElementById("client-name");
+          const phone = document.getElementById("client-phone");
+          let ok = true;
+          [name, phone].forEach((el) => {
+            const f = el.closest(".field");
+            const valid = el.id === "client-phone"
+              ? /^0\d{1,2}-?\d{7}$/.test(el.value.trim().replace(/\s/g, "")) || /^05\d{8}$/.test(el.value.trim().replace(/[-\s]/g, ""))
+              : el.value.trim().length >= 2;
+            f.classList.toggle("error", !valid);
+            if (!valid) ok = false;
+          });
+          if (!ok) return false;
+          state.name = name.value.trim();
+          state.phone = phone.value.trim();
+          state.notes = document.getElementById("client-notes").value.trim();
+        }
+        return true;
+      }
+
+      function flashOptions() {
+        document.querySelectorAll("#service-options .option").forEach((o) => {
+          o.style.borderColor = "#b42318";
+          setTimeout(() => (o.style.borderColor = ""), 500);
+        });
+      }
+
+      form.querySelectorAll("[data-next]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (!validateStep(state.step)) return;
+          if (state.step === 2) renderSlots();
+          goStep(state.step + 1);
+          saveDraft();
+          const panel = document.getElementById("booking-panel");
+          if (panel) panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+      });
+
+      form.querySelectorAll("[data-back]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          goStep(Math.max(1, state.step - 1));
+          saveDraft();
+          const panel = document.getElementById("booking-panel");
+          if (panel) panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!validateStep(4)) return;
+        state.id = "LL-" + Date.now().toString(36).toUpperCase();
+        state.status = "מאושר (הדגמה)";
+        clearDraft();
+        showConfirmation();
+        showToast("התור נשמר בהדגמה — הסיכום למטה");
+      });
+
+      function formatDateHe(iso) {
+        if (!iso) return "";
+        const d = new Date(iso + "T12:00:00");
+        return d.toLocaleDateString("he-IL", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+      }
+
+      function showConfirmation() {
+        form.style.display = "none";
+        confirmView.classList.add("active");
+        const svc = SERVICES[state.service];
+        const rows = [
+          ["מספר הזמנה", state.id],
+          ["שם", state.name],
+          ["טלפון", state.phone],
+          ["שירות", svc.label],
+          ["מחיר", svc.price],
+          ["תאריך", formatDateHe(state.date)],
+          ["שעה", state.time],
+          ["סטטוס", state.status],
+        ];
+        if (state.notes) rows.push(["הערה", state.notes]);
+
+        const card = document.getElementById("summary-card");
+        card.innerHTML = rows
+          .map(
+            ([k, v]) =>
+              `<div class="summary-row"><dt>${k}</dt><dd>${escapeHtml(v)}</dd></div>`
+          )
+          .join("");
+
+        const dayBefore = new Date(state.date + "T12:00:00");
+        dayBefore.setDate(dayBefore.getDate() - 1);
+        const dayBeforeStr = dayBefore.toLocaleDateString("he-IL");
+
+        document.getElementById("notify-sim").innerHTML = `
+          <div class="notify-bubble out">
+            <div class="who">סימולציה · WhatsApp ללקוחה · מיידי</div>
+            היי ${escapeHtml(state.name)}, התור שלך ב־YAELIE NAILS אושר ✅<br/>
+            ${escapeHtml(svc.label)} · <bdi>${escapeHtml(formatDateHe(state.date))}</bdi> בשעה <bdi>${escapeHtml(state.time)}</bdi><br/>
+            נתראה באטלייה — יחס של נסיכה מובטח.
+          </div>
+          <div class="notify-bubble in">
+            <div class="who">סימולציה · SMS למטפלת · מיידי</div>
+            תור חדש: ${escapeHtml(state.name)} · ${escapeHtml(state.phone)} · ${escapeHtml(svc.label)} · <bdi>${escapeHtml(state.date)}</bdi> <bdi>${escapeHtml(state.time)}</bdi> · ${escapeHtml(state.id)}${state.refName ? " · יש תמונת דוגמה" : ""}
+          </div>
+          <div class="notify-bubble out">
+            <div class="who">סימולציה · תזכורת אוטומטית · יום לפני (${escapeHtml(dayBeforeStr)})</div>
+            תזכורת YAELIE NAILS: מחר בשעה <bdi>${escapeHtml(state.time)}</bdi> מחכה לך תור ${escapeHtml(svc.label)}. לשינוי — השיבי להודעה זו.
+          </div>
+        `;
+
+        if (state.refData) {
+          const refRow = document.createElement("div");
+          refRow.className = "summary-row";
+          refRow.innerHTML = `<dt>דוגמה למטפלת</dt><dd><img src="${state.refData}" alt="תמונת דוגמה" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,162,122,.5);" /></dd>`;
+          card.appendChild(refRow);
+        }
+
+        confirmView.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      document.getElementById("export-csv").addEventListener("click", () => {
+        const svc = SERVICES[state.service];
+        const headers = ["שם", "טלפון", "שירות", "מחיר", "תאריך", "שעה", "סטטוס", "מספר_הזמנה", "הערה"];
+        const row = [
+          state.name,
+          state.phone,
+          svc.label,
+          svc.price,
+          state.date,
+          state.time,
+          state.status,
+          state.id,
+          state.notes || "",
+        ].map((cell) => `"${String(cell).replace(/"/g, '""')}"`);
+        const bom = "\uFEFF";
+        const csv = bom + headers.join(",") + "\n" + row.join(",") + "\n";
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "yaelie-appointment-" + state.id + ".csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      function clearRefPhoto() {
+        state.refName = "";
+        state.refData = "";
+        const input = document.getElementById("ref-photo");
+        const preview = document.getElementById("upload-preview");
+        const thumb = document.getElementById("upload-thumb");
+        if (input) input.value = "";
+        if (thumb) thumb.removeAttribute("src");
+        if (preview) preview.classList.remove("is-on");
+      }
+
+      (function initRefUpload() {
+        const input = document.getElementById("ref-photo");
+        const box = document.getElementById("upload-box");
+        const preview = document.getElementById("upload-preview");
+        const thumb = document.getElementById("upload-thumb");
+        const clearBtn = document.getElementById("upload-clear");
+        if (!input || !box) return;
+
+        function handleFile(file) {
+          if (!file) return;
+          if (!/^image\/(jpeg|png|webp)$/i.test(file.type)) {
+            showToast("רק תמונות JPG / PNG / WEBP");
+            return;
+          }
+          if (file.size > 3 * 1024 * 1024) {
+            showToast("הקובץ גדול מדי — עד 3MB");
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = () => {
+            state.refName = file.name;
+            state.refData = String(reader.result || "");
+            thumb.src = state.refData;
+            preview.classList.add("is-on");
+            showToast("תמונת הדוגמה מוכנה למטפלת");
+            saveDraft();
+          };
+          reader.readAsDataURL(file);
+        }
+
+        input.addEventListener("change", () => handleFile(input.files && input.files[0]));
+        clearBtn.addEventListener("click", () => {
+          clearRefPhoto();
+          saveDraft();
+        });
+
+        ["dragenter", "dragover"].forEach((ev) => {
+          box.addEventListener(ev, (e) => {
+            e.preventDefault();
+            box.classList.add("is-drag");
+          });
+        });
+        ["dragleave", "drop"].forEach((ev) => {
+          box.addEventListener(ev, (e) => {
+            e.preventDefault();
+            box.classList.remove("is-drag");
+          });
+        });
+        box.addEventListener("drop", (e) => {
+          const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+          handleFile(file);
+        });
+      })();
+
+      document.getElementById("new-booking").addEventListener("click", () => {
+        state.step = 1;
+        state.service = null;
+        state.date = "";
+        state.time = "";
+        state.name = "";
+        state.phone = "";
+        state.notes = "";
+        clearRefPhoto();
+        clearDraft();
+        form.reset();
+        document.querySelectorAll("#service-options .option").forEach((o) => o.classList.remove("selected"));
+        document.getElementById("time-slots").innerHTML = "";
+        confirmView.classList.remove("active");
+        form.style.display = "";
+        goStep(1);
+      });
+
+      ["client-name", "client-phone", "client-notes"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("change", () => {
+          if (id === "client-name") state.name = el.value.trim();
+          if (id === "client-phone") state.phone = el.value.trim();
+          if (id === "client-notes") state.notes = el.value.trim();
+          saveDraft();
+        });
+      });
+
+      document.querySelectorAll("#service-options .option").forEach((o) => {
+        o.addEventListener("click", () => saveDraft());
+      });
+
+      const pendingDraft = readDraft();
+      if (pendingDraft && (pendingDraft.service || pendingDraft.name || pendingDraft.date)) {
+        resumeBanner.classList.add("is-on");
+        document.getElementById("resume-btn").addEventListener("click", () => {
+          applyDraft(pendingDraft);
+          resumeBanner.classList.remove("is-on");
+          showToast("ממשיכים מהטיוטה הקודמת");
+          document.getElementById("booking-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>
